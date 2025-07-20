@@ -1,0 +1,108 @@
+{
+  "PHP Block Snippet": {
+    "prefix": "php",
+    "body": ["<?php", "\t$1", "?>"],
+    "description": "PHP opening and closing tags with placeholder"
+  },
+  "PHP Reverse Block Snippet": {
+    "prefix": "rphp",
+    "body": ["?>", "\t$1", "<?php"],
+    "description": "PHP opening and closing tags with placeholder"
+  },
+  "Short PHP Snippet": {
+    "prefix": "ph",
+    "body": ["<?php $1 ?>"],
+    "description": "Short PHP block"
+  },
+  "WP Exit if Not ABSPATH": {
+    "prefix": "wp-exit",
+    "body": ["if (!defined('ABSPATH')) {", "    exit;", "}"],
+    "description": "Exit if ABSPATH is not defined (WordPress plugin security)"
+  },
+  "Preformatted var_dump": {
+    "prefix": "vdump",
+    "body": [
+      "echo \"<pre>\";",
+      "var_dump($${1:variable});",
+      "echo \"</pre>\";"
+    ],
+    "description": "Echo preformatted var_dump for debugging"
+  },
+  "Preformatted Print_r": {
+    "prefix": "pr",
+    "body": ["echo \"<pre>\";", "Print_r($${1:variable});", "echo \"</pre>\";"],
+    "description": "Echo preformatted var_dump for debugging"
+  },
+  "WordPress Shortcode Class": {
+    "prefix": "wp-shortcode-class",
+    "body": [
+      "class ${1:Wp_ShortCode}",
+      "{",
+      "    public function __construct()",
+      "    {",
+      "        add_shortcode('${2:wp_shortcode}', [\\$this, 'render']);",
+      "    }",
+      "",
+      "    public function render(\\$atts, \\$content = null)",
+      "    {",
+      "        \\$atts = array_change_key_case((array) \\$atts, CASE_LOWER);",
+      "        \\$attributes = shortcode_atts([",
+      "            'type' => 'default',",
+      "        ], \\$atts);",
+      "",
+      "        ob_start();",
+      "        ?>",
+      "        <div class=\"${3:wp-shortcode}\">",
+      "            <?php echo esc_html(\\$attributes['type']); ?>",
+      "            <div><?php echo wp_kses_post(\\$content); ?></div>",
+      "        </div>",
+      "        <?php \\$data = ob_get_clean();",
+      "        return \\$data;",
+      "    }",
+      "}",
+      ""
+    ],
+    "description": "Template for a WordPress shortcode class"
+  },
+  "WordPress Plugin Header": {
+    "prefix": "wppluginheader",
+    "body": [
+      "<?php",
+      "/**",
+      " * Plugin Name: ${1:Your plguin name..}",
+      " * Plugin URI: ${2:https://example.com/}",
+      " * Description: ${3:A better plugin for WordPress.}",
+      " * Version: ${4:1.0.0}",
+      " * Author: ${5:Author...}",
+      " * Author URI: ${6:https://example.com/}",
+      " * License: GPL-2.0+",
+      " * License URI: http://www.gnu.org/licenses/gpl-2.0.txt",
+      " * Text Domain: ${7:plugin-text-domain}",
+      " * Domain Path: /languages",
+      " */",
+      "",
+      "// If this file is called directly, abort.",
+      "if (!defined('WPINC')) {",
+      "    die;",
+      "}",
+      ""
+    ],
+    "description": "Basic WordPress plugin header block"
+  },
+  "WordPress Class Skeleton (SAD_Register_Post_type)": {
+    "prefix": "php-class",
+    "body": [
+      "class ${1:}",
+      "{",
+      "    public function __construct()",
+      "    {",
+      "        ${2:// Constructor code here}",
+      "    }",
+      "",
+      "    ${3:// Additional methods can go here}",
+      "}",
+      ""
+    ],
+    "description": "Basic class structure for WordPress plugin (SAD_Register_Post_type)"
+  }
+}
