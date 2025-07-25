@@ -1,0 +1,56 @@
+{
+  // Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "arrow function": {
+    "prefix": "fn",
+    "body": ["($1)=> {$2}"],
+    "description": "simple arrow function"
+  },
+  "iffe": {
+    "prefix": "iife",
+    "body": ["( $1 ($2)=> {$3})()"]
+  },
+  "console.log": {
+    "prefix": "log",
+    "body": ["console.log($1)"]
+  },
+  "console.dir": {
+    "prefix": "dir",
+    "body": ["console.dir($1)"]
+  },
+  "arrow function": {
+    "prefix": "arrfn",
+    "body": ["($1) => {$2}"]
+  },
+  "arrow function": {
+    "prefix": "fn",
+    "body": ["($1) => {$2}"]
+  },
+  "const function": {
+    "prefix": "cfn",
+    "body": ["const $1=($2) => {$3}"]
+  },
+  "jQuery IIFE with DOM Ready and AJAX Object": {
+    "prefix": "wp-jqueryiife",
+    "body": [
+      "(function ($) {",
+      "  $(document).ready(function () {",
+      "    // write code here",
+      "    console.log('jquery loaded');",
+      "  });",
+      "})(jQuery);"
+    ],
+    "description": "jQuery IIFE DOM ready wrapper with tnn_ajax_data access"
+  }
+}
